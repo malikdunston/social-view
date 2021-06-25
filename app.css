@@ -1,0 +1,17 @@
+@import url("crdunsto.css");
+
+img {
+    max-width: 100%;
+    display: inline-block;
+}
+
+facebook-item,
+ twitter-item,
+ instagram-item,
+ gallery-item,
+main-header,
+main-footer,
+ui-view
+{
+    display: block;
+}

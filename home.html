@@ -1,0 +1,37 @@
+		<!-- Page content here -->
+		<section class="container py-4" id="facebook">
+			<header class="d-flex flex-row justify-content-between">
+				<h1>Facebook</h1>
+				<button class="btn btn-dark my-auto" ui-sref="facebook"><small>View only Facebook</small></button>
+			</header>
+			<facebook-item class="social-item border p-4" item="item" ng-repeat="item in newData.facebook track by $index">
+
+			</facebook-item>
+		</section>
+		<section class="container py-4" id="twitter">
+			<header class="d-flex flex-row justify-content-between">
+				<h1>Twitter</h1>
+				<button class="btn btn-dark my-auto" ui-sref="twitter"><small>View only Twitter</small></button>
+			</header>
+			<twitter-item class="social-item border p-4" item="item" ng-repeat="item in newData.twitter track by $index">
+
+			</twitter-item>
+		</section>
+		<section class="container py-4" id="instagram">
+			<header class="d-flex flex-row justify-content-between">
+				<h1>Instagram</h1>
+				<button class="btn btn-dark my-auto" ui-sref="instagram"><small>View only Instagram</small></button>
+			</header>
+			<instagram-item class="social-item border p-4" item="item" ng-repeat="item in newData.instagram track by $index">
+
+			</instagram-item>
+		</section>
+		<section class="container py-4" id="galleries">
+			<header class="d-flex flex-row justify-content-between">
+				<h1>Galleries</h1>
+				<button class="btn btn-dark my-auto" ui-sref="galleries"><small>View only Galleries</small></button>
+			</header>
+			<gallery-item class="social-item border p-4" item="item" ng-repeat="item in newData.gallery track by $index">
+
+			</gallery-item>
+		</section>

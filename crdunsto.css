@@ -1,0 +1,70 @@
+main-header{
+	position: fixed;
+	width: 100%;
+}
+
+main-header header.container{
+	padding-left: 2rem;
+}
+
+main-header a{
+	margin-right: 2rem;
+	color: white;
+}
+main-header a:hover{
+	color: white;
+}
+
+ui-view{
+	padding-top: 4rem;
+}
+ui-view > section{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	border-top: 1px solid #dee2e6!important;
+}
+
+	section > header{
+		width: 100%;
+		margin: 0 1rem;
+	}
+		h1 {
+			font-weight: 100;
+			margin: 0;
+		}
+
+		header button.btn {
+			padding: .33rem .5rem .5rem;
+			line-height: 1;
+		}
+
+
+	.social-item{
+		margin: 12px;
+		width: 100%;
+		transition: .3s;
+		/* box-sizing: border-box; */
+		box-shadow: 0px 0px rgba(0, 0, 0, 0.02);
+	}
+	.social-item:hover{
+		padding: 14px;
+		/* background: red; */
+		box-shadow: 5px 5px rgba(0, 0, 0, 0.08);
+	}
+
+		.social-item img,
+		.social-item a{
+			font-weight: bold;
+			display: block;
+			margin-bottom: .5rem;
+		}
+
+@media screen and (min-width: 992px){
+	.social-item{
+		width: calc(33% - 2rem);
+	}
+	.social-item.inside-page{
+		width: calc(50% - 2rem);
+	}
+}
