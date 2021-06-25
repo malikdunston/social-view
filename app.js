@@ -1,69 +1,28 @@
 var app = angular.module('app', ['ui.router']);
 
-
-// step 1
-app.controller("mainCtrl", function($scope){
-
-	//step 3
+app.controller("mainCtrl", function ($scope) {
 	$scope.data = window.data;
-
-	//step 4 - filtery by type.
 	$scope.newData = {
 		'facebook': [],
 		'instagram': [],
 		'twitter': [],
 		'gallery': []
 	};
-	for(var i = 0 ; i < $scope.data.length ; i++){
-		// console.dir($scope.data[i].type);
+	for (var i = 0; i < $scope.data.length; i++) {
 		var x = $scope.data[i];
-		if(x.type == "facebook"){
+		if (x.type == "facebook") {
 			$scope.newData.facebook.push(x);
-		} else if(x.type == "instagram"){
+		} else if (x.type == "instagram") {
 			$scope.newData.instagram.push(x);
-		} else if(x.type == "tweet"){
+		} else if (x.type == "tweet") {
 			$scope.newData.twitter.push(x);
-		} else{
+		} else {
 			$scope.newData.gallery.push(x);
 		}
 	};
-
-	console.dir($scope.update);
 });
-
-// Step 4 - Components
-function mainHeaderCtrl(headFoot){
-	this.headertext = "mainHeader";
-	// this.$onInit = function(){
-	// 	this.headertext = "mainHeader";
-	// 	console.log(this);
-	// }
-	this.footertext = "hello world...";
-	this.$onInit = function(){
-		// alert("jak;sdfja;slk");
-	}
-	this.$onInit();
-	console.log(headFoot);
-}
-
-//implicit controllers - every .comp has one
-// automatic $ctrl controllerAs
 app
-	.component("mainHeader", {
-		controller: mainHeaderCtrl("header"),
-		controllerAs: "mh",
-		template: "<header class='container' thang='update'>View more projects at <a href='https://www.malikdunston.com'>malikdunston.com</a></header>",
-		bindings: {
-			thang: "="
-		}
-	})
-	.component("mainFooter", {
-		controler: mainHeaderCtrl("footer"),		
-		controllerAs: "mf",
-		template: "<footer class='py-4 text-white text-center bg-primary'>&copy; 2018</footer>"
-	})
 	.component("facebookItem", {
-		// transclude: true,
 		templateUrl: "facebook-item.html",
 		bindings: {
 			item: "<"
@@ -88,13 +47,15 @@ app
 		}
 	});
 
-// step 6 configure route - no uirouteprovider
-
 app
-	.config(["$stateProvider", function($stateProvider){
+	.config(["$stateProvider", "$locationProvider", function ($stateProvider, $locationProvider) {
+		$locationProvider.html5Mode({
+			enabled: true,
+			// requireBase: false
+		});
 		$stateProvider
 			.state('home', {
-				url: "",
+				url: "/",
 				templateUrl: "home.html",
 				controller: "mainCtrl"
 			})

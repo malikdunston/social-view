@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="app" ng-controller="mainCtrl">
 <head>
+	<title>Social View</title>
+	<base href="/">
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>Social View</title>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css" />
 	<link rel="stylesheet" href="app.css" />
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.5/angular.min.js"></script>
@@ -12,9 +13,14 @@
 	<script src="data.js"></script>
 	<script src="app.js"></script>
 </head>
-<body ng-app="app" ng-controller="mainCtrl">
-	<main-header class='py-4 text-white bg-dark'></main-header>	
+<body>
+	<header class='py-4 text-white bg-dark' thang='update'>
+		<div class="container">
+			<h3 ng-href="/">Social View</h3>
+			
+		</div>
+	</header>
 	<ui-view></ui-view>
-	<main-footer></main-footer>
+	<footer class='py-4 text-white text-center bg-primary'>&copy; 2018</footer>
 </body>
 </html>
